@@ -35,3 +35,20 @@
     うち  名詞,非自立,副詞可能,*,*,*,うち,ウチ,ウチ
     EOS
 
+### php-mecab
+
+    git clone https://github.com/rsky/php-mecab.git
+    cd php-mecab/mecab/
+    phpize
+    ./configure
+    make
+    make test
+    sudo make install
+
+    vi /etc/php.ini
+    [Mecab]
+    extension_dir=/usr/lib/php/extensions/no-debug-non-zts-20100525
+    extension=mecab.so
+
+    php -r 'phpinfo();' | grep mecab
+
