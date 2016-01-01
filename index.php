@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>失格人間</title>
+<meta name="description" content="MeCabによる形態素解析→マルコフ連鎖テスト">
+<meta property="og:title" content="失格人間" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://vps1.liverty.biz/hbkr/cutup/" />
+<meta property="og:image" content="http://vps1.liverty.biz/hbkr/cutup/ogp.png" />
+<meta property="og:site_name" content="失格人間" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:description" content="MeCabによる形態素解析→マルコフ連鎖テスト" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="MeCabによる形態素解析→マルコフ連鎖テスト" />
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 <style type="text/css">
