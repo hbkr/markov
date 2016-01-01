@@ -58,3 +58,12 @@ mecabp.php の $path は適宜変更してください
 
     php -r 'phpinfo();' | grep mecab
 
+### Wikipediaとはてなの単語を辞書に追加
+
+    mkdir /usr/local/lib/mecab/dic/userdic
+    cp -a ./onomasticon.dic(下記参考URLにて生成) /usr/local/lib/mecab/dic/userdic/
+    vi /usr/local/etc/mecabrc
+    userdic=/usr/local/lib/mecab/dic/userdic/onomasticon.dic
+
+[参考URL](http://kzy52.com/entry/2014/10/05/195534)
+
