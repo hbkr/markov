@@ -18,7 +18,6 @@ require_once('markov.php');
 require('mecabp.php');
 
 $string='
-
 恥の多い生涯を送って来ました。
 自分には、人間の生活というものが、見当つかないのです。自分は東北の田舎に生れましたので、汽車をはじめて見たのは、よほど大きくなってからでした。自分は停車場のブリッジを、上って、降りて、そうしてそれが線路をまたぎ越えるために造られたものだという事には全然気づかず、ただそれは停車場の構内を外国の遊戯場みたいに、複雑に楽しく、ハイカラにするためにのみ、設備せられてあるものだとばかり思っていました。
 しかも、かなり永い間そう思っていたのです。ブリッジの上ったり降りたりは、自分にはむしろ、ずいぶん垢抜《あかぬ》けのした遊戯で、それは鉄道のサーヴィスの中でも、最も気のきいたサーヴィスの一つだと思っていたのですが、のちにそれはただ旅客が線路をまたぎ越えるための頗る実利的な階段に過ぎないのを発見して、にわかに興が覚めました。
@@ -42,16 +41,14 @@ $string='
 自分がいままで阿鼻叫喚で生きて来た所謂「人間」の世界に於いて、たった一つ、真理らしく思われたのは、それだけでした。
 ただ、一さいは過ぎて行きます。
 自分はことし、二十七になります。白髪がめっきりふえたので、たいていの人から、四十以上に見られます。
-
 '.PHP_EOL;
 
 $summarizer = new Markov;
-$ary3 = array();
-//var_dump($ary);
+$words = array();
 
 $fn = "./".hash("sha1", $string);
 if (file_exists($fn)) {
-    $ary3 = unserialize(file_get_contents($fn));
+    $words = unserialize(file_get_contents($fn));
 } else {
     $mecab = new Mecabp;
     $ary = $mecab->parse($string);
@@ -60,28 +57,21 @@ if (file_exists($fn)) {
         if ($ary[$i]["kind"] == "名詞") {
             $str = "<span style='font-weight:bold; font-size:20px;'>".$str."</span>";
         }
-        array_push($ary3, $str);
-        //print_r($ary[$i]["word"]);
+        array_push($words, $str);
     }
-    array_push($ary3, "EOS");
-    file_put_contents($fn, serialize($ary3));
+    array_push($words, "EOS");
+    file_put_contents($fn, serialize($words));
 }
 
-//print_r($ary3);
-//echo $summarizer->summarize($string, 1);
 $time_start = microtime(true);
 
-
-echo $summarizer->summarize($ary3, 1);
-// 1を渡すか2を渡すかでアルゴリズムが変わる。デフォルトは1。1でも2でもない場合はなにもしません。
-
-// ここに測定したいPHPの処理を記述
+echo $summarizer->summarize($words);
 
 $timelimit = microtime(true) - $time_start;
-//echo "<hr /><div>".$timelimit . '</div>';
 
 
 ?>
+<div style="margin-top:20px">※ <a href=".">リロード</a>する度に文章は変わります</div>
 <hr />
 MeCabによる形態素解析→マルコフ連鎖テスト
 <a href="https://github.com/hbkr/markov">github</a> / <a href="http://twitter.com/hbkr">twitter</a>
