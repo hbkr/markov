@@ -1,5 +1,5 @@
-# furikaeri
-１年の振り返りジェネレーター
+# Markov
+MeCabによる形態素解析 → マルコフ連鎖テスト
 
 ## Install
 
@@ -35,7 +35,7 @@
     うち  名詞,非自立,副詞可能,*,*,*,うち,ウチ,ウチ
     EOS
 
-### php-mecab
+### php-mecab (今回使ってません)
 
     git clone https://github.com/rsky/php-mecab.git
     cd php-mecab/mecab/
