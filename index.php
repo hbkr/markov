@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
+<title>失格人間</title>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 <style type="text/css">
@@ -83,6 +83,7 @@ $timelimit = microtime(true) - $time_start;
 
 ?>
 <hr />
+MeCabによる形態素解析→マルコフ連鎖テスト
 <a href="https://github.com/hbkr/markov">github</a> / <a href="http://twitter.com/hbkr">twitter</a>
 </body>
 </html>
