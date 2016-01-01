@@ -1,5 +1,5 @@
 <?php
-class MarkovChainSummarizer {
+class Markov {
   function summarize($text, $var = 1) {
     if ($var == 1) return $this->summarize_1($text);
     if ($var == 2) return $this->summarize_2($text);
