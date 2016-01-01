@@ -4,8 +4,11 @@ MeCabによる形態素解析 → マルコフ連鎖テスト
 ## Install
 
 下記突っ込んでいただければ動くかと
+
 mecabp.php の $path は適宜変更してください
+
 元ネタを変える場合は index.php の $string いじってください
+
 
 ### MeCab
 
