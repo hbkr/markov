@@ -75,7 +75,7 @@ if (file_exists($fn)) {
 
 $time_start = microtime(true);
 
-echo $summarizer->summarize($words);
+echo $summarizer->summarize($words, 3);
 
 $timelimit = microtime(true) - $time_start;
 
