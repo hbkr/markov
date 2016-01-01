@@ -3,6 +3,10 @@ MeCabによる形態素解析 → マルコフ連鎖テスト
 
 ## Install
 
+下記突っ込んでいただければ動くかと
+mecabp.php の $path は適宜変更してください
+元ネタを変える場合は index.php の $string いじってください
+
 ### MeCab
 
     wget http://mecab.googlecode.com/files/mecab-0.996.tar.gz
@@ -11,8 +15,7 @@ MeCabによる形態素解析 → マルコフ連鎖テスト
     ./configure
     make
     make check
-    sudo make install
-    sudo ldconfig
+    make install
 
 ### IPA Dictionary
 
@@ -43,11 +46,11 @@ MeCabによる形態素解析 → マルコフ連鎖テスト
     ./configure
     make
     make test
-    sudo make install
+    make install
 
     vi /etc/php.ini
     [Mecab]
-    extension_dir=/usr/lib/php/extensions/no-debug-non-zts-20100525
+    extension_dir=/usr/lib/php/extensions/[install dir]
     extension=mecab.so
 
     php -r 'phpinfo();' | grep mecab
