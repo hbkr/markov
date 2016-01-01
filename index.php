@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title></title>
+</head>
+
+<body>
 <?php
 require_once('markov.php');
 require('mecabp.php');
@@ -32,3 +40,6 @@ array_push($ary3, "EOS");
 echo $summarizer->summarize($ary3, 1);
 // 1を渡すか2を渡すかでアルゴリズムが変わる。デフォルトは1。1でも2でもない場合はなにもしません。
 ?>
+</body>
+</html>
+
